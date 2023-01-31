@@ -16,10 +16,6 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    public StudentController(StudentRepository studentRepository) {
-        this.studentService = studentService;
-    }
-
     @PostMapping(path = "/addStudent")
     public String addStudent(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String email, @RequestParam String course) {
         return studentService.addStudent(firstName, lastName, email, course);
